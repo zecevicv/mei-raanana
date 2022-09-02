@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="he-IL" dir="rtl">
+
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mei Raanana">
+  <title>Mei Raanana</title>
+
+  <!-- Style (Vendor) -->
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/elevate-framework.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="img/favicon.png">
+
+  <!-- Google Map -->
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+  <script type="text/javascript">
+    // When the window has finished loading create our google map below
+    google.maps.event.addDomListener(window, 'load', init);
+
+    function init() {
+      // Basic options for a simple Google Map
+      // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+      var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        zoom: 11,
+
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+        // How you would like to style the map. 
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: [{
+          "featureType": "all",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#f5f5f5"
+          }]
+        }, {
+          "featureType": "all",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#616161"
+          }]
+        }, {
+          "featureType": "all",
+          "elementType": "labels.text.stroke",
+          "stylers": [{
+            "color": "#f5f5f5"
+          }]
+        }, {
+          "featureType": "all",
+          "elementType": "labels.icon",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "administrative.country",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#9e9e9e"
+          }, {
+            "lightness": 35
+          }, {
+            "weight": 0.5
+          }]
+        }, {
+          "featureType": "administrative.province",
+          "elementType": "all",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "administrative.land_parcel",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#bdbdbd"
+          }]
+        }, {
+          "featureType": "poi",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#eeeeee"
+          }]
+        }, {
+          "featureType": "poi",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#757575"
+          }]
+        }, {
+          "featureType": "poi.park",
+          "elementType": "labels.text",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "poi.park",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#9e9e9e"
+          }]
+        }, {
+          "featureType": "road",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#ffffff"
+          }]
+        }, {
+          "featureType": "road.highway",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#dadada"
+          }]
+        }, {
+          "featureType": "road.highway",
+          "elementType": "labels",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "road.highway",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#616161"
+          }]
+        }, {
+          "featureType": "road.arterial",
+          "elementType": "labels",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "road.arterial",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#757575"
+          }]
+        }, {
+          "featureType": "road.local",
+          "elementType": "all",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "road.local",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#9e9e9e"
+          }]
+        }, {
+          "featureType": "transit.line",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#e5e5e5"
+          }, {
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "transit.station",
+          "elementType": "all",
+          "stylers": [{
+            "visibility": "off"
+          }]
+        }, {
+          "featureType": "transit.station",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#eeeeee"
+          }]
+        }, {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [{
+            "color": "#c9c9c9"
+          }]
+        }, {
+          "featureType": "water",
+          "elementType": "labels.text.fill",
+          "stylers": [{
+            "color": "#9e9e9e"
+          }]
+        }]
+      };
+
+      // Get the HTML DOM element that will contain your map 
+      // We are using a div with id="map" seen below in the <body>
+      var mapElement = document.getElementById('map');
+
+      // Create the Google Map using our element and options defined above
+      var map = new google.maps.Map(mapElement, mapOptions);
+
+      // Let's also add a marker while we're at it
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(40.6700, -73.9400),
+        map: map,
+        title: 'Snazzy!'
+      });
+    }
+  </script>
+
+</head>
+
+<body class="home-page">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <!-- Hamburger -->
+      <div class="header-hamburger d-mobile">
+        <a href="#"><img src="img/icons/hamburger.svg" alt="mei-raanana-img"></a>
+      </div>
+      <!-- Logo -->
+      <div class="header-logo">
+        <a href="#"><img src="img/global/logo.png" alt="mei-raanana-img"></a>
+      </div>
+      <!-- Menu -->
+      <div class="header-menu d-desktop">
+        <ul class="f-d-18">
+          <!-- Item -->
+          <li><a href="#">מי רעננה</a></li>
+          <!-- Item -->
+          <li><a href="#">איכות המים</a></li>
+          <!-- Item -->
+          <li><a href="#">צריכת מים ותעריפים</a></li>
+          <!-- Item -->
+          <li><a href="#">חשבונות ותשלומים</a></li>
+          <!-- Item -->
+          <li><a href="#">תכנון ורישוי</a></li>
+          <!-- Item -->
+          <li><a href="#">תחזוקה ופיתוח</a></li>
+          <!-- Item -->
+          <li><a href="#">שירות לקוחות </a></li>
+        </ul>
+      </div>
+      <!-- Action -->
+      <div class="header-action">
+        <!-- Search -->
+        <a href="#" class="search-icon d-desktop"><img src="img/icons/search-blue.svg" alt="mei-raanana-img"></a>
+        <!-- Btn -->
+        <a href="#" class="btn btn-primary">
+          <img src="img/icons/account-white.svg" alt="mei-raanana-img" class="btn-img">
+          <span class="d-desktop">איזור אישי</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner -->
+  <div class="banner">
+    <!-- Bg -->
+    <div class="bg">
+      <img src="img/home/banner.jpg" alt="mei-raanana-img">
+    </div>
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        <h1 class="f-d-85 f-m-70 semi-bold">ברוכים הבאים לאתר של מי רעננה</h1>
+      </div>
+      <!-- Box -->
+      <div class="box">
+        <!-- Top -->
+        <div class="box-top" dir="ltr">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide -->
+              <div class="swiper-slide">
+                <li class="f-d-16 f-m-28"><a href="#">עקב נגיף הקורונה לא תתקיים קבלת קהל החל מה 18.01.22</a></li>
+              </div>
+              <!-- Slide -->
+              <div class="swiper-slide">
+                <li class="f-d-16 f-m-28"><a href="#">ברוכים הבאים לאתר של מי רעננה</a></li>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Bottom -->
+        <div class="box-bottom">
+          <a href="#">
+            <div class="box-bottom-img">
+              <img src="img/home/banner-box-img.jpg" alt="mei-raanana-img">
+            </div>
+            <div class="box-bottom-text">
+              <h3 class="f-d-22 f-m-30 bold">
+                מערכת לאיתור נזילות מים
+                <img src="img/icons/chevron-left.svg" alt="mei-raanana-img" class="d-mobile">
+              </h3>
+              <p class="f-d-16 d-desktop">באמצעות ניתוח צילומים מלווין</p>
+              <p class="f-d-16 bold d-desktop">פרטים נוספים <img src="img/icons/chevron-left.svg" alt="mei-raanana-img"></p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <!-- Accordion -->
+      <div class="accordion">
+        <!-- Collapsible -->
+        <div class="collapsible show">
+          <!-- Toggler -->
+          <div class="collapse-toggler">
+            <div class="toggler-img"><img src="img/home/banner-toggler-img-1.svg" alt="mei-raanana-img"></div>
+            <div class="toggler-text">
+              <h3 class="f-d-22 f-m-32">חשבון מים</h3>
+              <p class="f-d-16 f-m-30">
+                <span class="d-desktop">כאן ניתן לשלם את חשבון המים דרך האינרנט</span>
+                <span class="d-mobile">כל דרכי התשלום</span>
+              </p>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse" style="height: auto">
+            <div>
+              <div class="collapse-heading">
+                <h3 class="f-d-22 f-m-45">חשבון מים</h3>
+                <p class="f-d-16 f-m-30">
+                  כאן ניתן לשלם את חשבון המים דרך האינרנט
+                </p>
+              </div>
+              <ul class="banner-cards col-2">
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-1.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">מעבר לתשלום</p>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-2.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">הוראת קבע</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Collapsible -->
+        <div class="collapsible">
+          <!-- Toggler -->
+          <div class="collapse-toggler">
+            <div class="toggler-img"><img src="img/home/banner-toggler-img-2.svg" alt="mei-raanana-img"></div>
+            <div class="toggler-text">
+              <h3 class="f-d-22 f-m-32">פעולות נפוצות</h3>
+              <p class="f-d-16 f-m-30">
+                <span class="d-desktop">עוברים דירה, עדכון דיירים, קביעת תורים ועוד</span>
+                <span class="d-mobile">עדכונים, תורים ועוד</span>
+              </p>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse">
+            <div>
+              <div class="collapse-heading">
+                <h3 class="f-d-22 f-m-45">פעולות נפוצות</h3>
+                <p class="f-d-16 f-m-30">
+                  עוברים דירה, עדכון דיירים, קביעת תורים ועוד
+                </p>
+              </div>
+              <ul class="banner-cards col-3">
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-3.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">עוברים דירה</p>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-4.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">עדכון דיירים</p>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-5.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">זימון תורים</p>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-6.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">שובר דיגיטלי</p>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-7.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">קריאת תושב</p>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-8.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">החלפת משלמים</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Collapsible -->
+        <div class="collapsible">
+          <!-- Toggler -->
+          <div class="collapse-toggler">
+            <div class="toggler-img"><img src="img/home/banner-toggler-img-3.svg" alt="mei-raanana-img"></div>
+            <div class="toggler-text">
+              <h3 class="f-d-22 f-m-32">שירות לקוחות</h3>
+              <p class="f-d-16 f-m-30">
+                <span class="d-desktop">דיווח על נזילה, טפסים, מוקד שירות</span>
+                <span class="d-mobile">מוקד שירות ועוד</span>
+              </p>
+            </div>
+          </div>
+          <!-- Collapse -->
+          <div class="collapse">
+            <div>
+              <div class="collapse-heading">
+                <h3 class="f-d-22 f-m-45">שירות לקוחות</h3>
+                <p class="f-d-16 f-m-30">
+                  דיווח על נזילה, טפסים, מוקד שירות
+                </p>
+              </div>
+              <ul class="banner-cards col-2">
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-1.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">מעבר לתשלום</p>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li class="banner-card">
+                  <div>
+                    <img src="img/home/banner-card-img-2.svg" alt="mei-raanana-img">
+                    <p class="f-d-16 f-m-30">הוראת קבע</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Grid -->
+  <div class="post-grid">
+    <div class="container">
+      <!-- Tabs -->
+      <div class="tabs">
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+          <h2 class="f-d-60 f-m-60 medium">חדשות
+            <br> ועדכונים</h2>
+          <ul class="f-d-18 f-m-32">
+            <li class="tab-btn active" data-tab="#tab1">
+              <a href="#">עבודות תשתית</a>
+            </li>
+            <li class="tab-btn" data-tab="#tab2">
+              <a href="#">למען הקהילה</a>
+            </li>
+            <li class="tab-btn" data-tab="#tab3">
+              <a href="#">הודעות גבייה</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Tab Content -->
+        <div class="tab-content">
+          <ul>
+            <li class="tab-panel active" id="tab1">
+              <ul class="post-grid-cards">
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="tab-panel" id="tab2">
+              <ul class="post-grid-cards">
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="tab-panel" id="tab3">
+              <ul class="post-grid-cards">
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+                <!-- Item -->
+                <li>
+                  <!-- Post Card -->
+                  <div class="post-card">
+                    <a href="#">
+                      <!-- Img -->
+                      <div class="img">
+                        <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                      </div>
+                      <!-- Text -->
+                      <div class="text">
+                        <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                        <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Read More -->
+      <div class="read-more d-mobile">
+        <a href="#" class="f-m-30 bold">
+          הצג עוד
+          <img src="img/icons/chevron-bottom.svg" alt="mei-raanana-img">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div class="map">
+    <div class="container">
+      <!-- Text -->
+      <div class="text">
+        <!-- Heading -->
+        <div class="heading">
+          <h2 class="f-d-60 f-m-60 medium">העשייה שלנו</h2>
+          <p class="f-d-18 f-m-32">לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית צש בליא, מנסוטו צמלח לביקו ננבי,
+            צמוקו בלוקריה שיצמה ברורק</p>
+        </div>
+        <!-- Numbers -->
+        <div class="numbers">
+          <ul>
+            <!-- Item -->
+            <li>
+              <h3 class="f-d-40 f-m-50 text-blue regular">30</h3>
+              <p class="f-d-18 f-m-30">פרויקטים</p>
+            </li>
+            <!-- Item -->
+            <li>
+              <h3 class="f-d-40 f-m-50 text-blue regular">6.8%</h3>
+              <p class="f-d-18 f-m-30">פחת באחוזים</p>
+            </li>
+            <!-- Item -->
+            <li>
+              <h3 class="f-d-40 f-m-50 text-blue regular">87 K</h3>
+              <p class="f-d-18 f-m-30">תושבים</p>
+            </li>
+            <!-- Item -->
+            <li>
+              <h3 class="f-d-40 f-m-50 text-blue regular">7.6 M</h3>
+              <p class="f-d-18 f-m-30">מ"ק מים שסופקו</p>
+            </li>
+          </ul>
+        </div>
+        <!-- Icons -->
+        <div class="icons">
+          <h3 class="f-d-18 f-m-32">:בחרו איזה פרויקטים תרצו לראות</h3>
+          <ul>
+            <!-- Item -->
+            <li>
+              <a href="#" class="active">
+                <img src="img/home/map-icon-1.png" alt="mei-raanana-img">
+                <p class="f-d-18 f-m-30">הנדסה ושונות</p>
+              </a>
+            </li>
+            <!-- Item -->
+            <li>
+              <a href="#">
+                <img src="img/home/map-icon-2.png" alt="mei-raanana-img">
+                <p class="f-d-18 f-m-30">שיקום קוי מים</p>
+              </a>
+            </li>
+            <!-- Item -->
+            <li>
+              <a href="#">
+                <img src="img/home/map-icon-3.png" alt="mei-raanana-img">
+                <p class="f-d-18 f-m-30">שיקום מים וביוב</p>
+              </a>
+            </li>
+            <!-- Item -->
+            <li>
+              <a href="#">
+                <img src="img/home/map-icon-4.png" alt="mei-raanana-img">
+                <p class="f-d-18 f-m-30">שיקום מבנים</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Img -->
+      <div class="img">
+        <div class="map-fade"></div>
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="services">
+    <div class="container">
+      <!-- Row -->
+      <div class="row">
+        <!-- Col -->
+        <div class="col">
+          <!-- Heading -->
+          <div class="heading">
+            <h2 class="f-d-60 f-m-60 medium">אנחנו פה בשבילכם</h2>
+            <p class="f-d-18 f-m-32">חשוב לנו לאפשר לכם את כל הדרכים והערוצים להיות עמנו בקשר, בכל רגע, בדרך הנוחה לכם
+            </p>
+          </div>
+          <!-- Icons -->
+          <div class="icons">
+            <h3 class="f-d-18 f-m-32">:בחרו איזה פעולה תרצו לעשות</h3>
+            <ul>
+              <!-- Item -->
+              <li>
+                <a href="#" class="active">
+                  <img src="img/home/services-icon-1.png" alt="mei-raanana-img">
+                  <p class="f-d-18 f-m-30">טפסים</p>
+                </a>
+              </li>
+              <!-- Item -->
+              <li>
+                <a href="#">
+                  <img src="img/home/services-icon-2.png" alt="mei-raanana-img">
+                  <p class="f-d-18 f-m-30">דברו איתנו בדיגיטל</p>
+                </a>
+              </li>
+              <!-- Item -->
+              <li>
+                <a href="#">
+                  <img src="img/home/services-icon-3.png" alt="mei-raanana-img">
+                  <p class="f-d-18 f-m-30">מוקד שירות</p>
+                </a>
+              </li>
+              <!-- Item -->
+              <li>
+                <a href="#">
+                  <img src="img/home/services-icon-4.png" alt="mei-raanana-img">
+                  <p class="f-d-18 f-m-30">דיווח על תקלה</p>
+                </a>
+              </li>
+              <!-- Item -->
+              <li>
+                <a href="#">
+                  <img src="img/home/services-icon-5.png" alt="mei-raanana-img">
+                  <p class="f-d-18 f-m-30">פנייה למנכ"ל</p>
+                </a>
+              </li>
+              <!-- Item -->
+              <li>
+                <a href="#">
+                  <img src="img/home/services-icon-6.png" alt="mei-raanana-img">
+                  <p class="f-d-18 f-m-30">איזור אישי</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Col -->
+        <div class="col">
+          <!-- Img -->
+          <div class="img">
+            <img src="img/home/services-img.jpg" alt="mei-raanana-img">
+          </div>
+          <!-- Text -->
+          <div class="text">
+            <h2 class="f-d-60 f-m-60 medium">איזור אישי</h2>
+            <p class="f-d-18 f-m-32">מגוון רחב של שירותים דיגיטליים הזמינים לתושב 24/7, מכל מקום, בנוחות ובמהירות</p>
+            <a href="#" class="btn btn-primary">פרטים נוספים</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Slider -->
+  <div class="post-slider">
+    <div class="container">
+      <!-- Heading -->
+      <div class="heading">
+        <h2 class="f-d-60 f-m-60 medium">הטכנולוגיות שלנו</h2>
+        <div class="swiper-arrows">
+          <a href="#" class="prev"><img src="img/icons/chevron-right.svg" alt="mei-raanana-img"></a>
+          <a href="#" class="next"><img src="img/icons/chevron-left.svg" alt="mei-raanana-img"></a>
+        </div>
+      </div>
+      <!-- Slider -->
+      <div class="slider">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Slide -->
+            <div class="swiper-slide">
+              <!-- Post Card -->
+              <div class="post-card">
+                <a href="#">
+                  <!-- Img -->
+                  <div class="img">
+                    <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                  </div>
+                  <!-- Text -->
+                  <div class="text">
+                    <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                    <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- Slide -->
+            <div class="swiper-slide">
+              <!-- Post Card -->
+              <div class="post-card">
+                <a href="#">
+                  <!-- Img -->
+                  <div class="img">
+                    <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                  </div>
+                  <!-- Text -->
+                  <div class="text">
+                    <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                    <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- Slide -->
+            <div class="swiper-slide">
+              <!-- Post Card -->
+              <div class="post-card">
+                <a href="#">
+                  <!-- Img -->
+                  <div class="img">
+                    <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                  </div>
+                  <!-- Text -->
+                  <div class="text">
+                    <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                    <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- Slide -->
+            <div class="swiper-slide">
+              <!-- Post Card -->
+              <div class="post-card">
+                <a href="#">
+                  <!-- Img -->
+                  <div class="img">
+                    <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                  </div>
+                  <!-- Text -->
+                  <div class="text">
+                    <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                    <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- Slide -->
+            <div class="swiper-slide">
+              <!-- Post Card -->
+              <div class="post-card">
+                <a href="#">
+                  <!-- Img -->
+                  <div class="img">
+                    <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                  </div>
+                  <!-- Text -->
+                  <div class="text">
+                    <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                    <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <!-- Slide -->
+            <div class="swiper-slide">
+              <!-- Post Card -->
+              <div class="post-card">
+                <a href="#">
+                  <!-- Img -->
+                  <div class="img">
+                    <img src="img/home/post-img-1.jpg" alt="mei-raanana-img">
+                  </div>
+                  <!-- Text -->
+                  <div class="text">
+                    <h3 class="f-d-30 f-m-42 medium">החלפת קווי המים בשכונת קריית גנים</h3>
+                    <p class="f-d-18 f-m-32">ברחובות האלון, האשל, התאנה והחרוב</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <!-- Banner -->
+    <div class="footer-banner">
+      <!-- Img -->
+      <div class="img">
+        <picture>
+          <source media="(min-width:1024px)" srcset="img/global/footer-banner.jpg">
+          <img src="img/global/footer-banner-mobile.jpg" alt="mei-raanana-img">
+        </picture>
+      </div>
+      <!-- Text -->
+      <div class="text">
+        <h2 class="f-d-45 f-m-45 medium">מי רעננה גם בוואטסאפ</h2>
+        <p class="f-d-18 f-m-32">חשוב לנו לאפשר לכם את כל הדרכים והערוצים להיות עמנו בקשר, בכל רגע, בדרך הנוחה לכם</p>
+        <a href="#" class="f-d-18 f-m-32 medium">
+          <img src="img/icons/wa-green.svg" alt="mei-raanana-img">
+          לצ'אט עם נציג
+        </a>
+      </div>
+    </div>
+    <!-- Main -->
+    <div class="footer-main">
+      <!-- Info -->
+      <div class="footer-info">
+        <!-- Logo -->
+        <div class="footer-logo">
+          <img src="img/global/logo.png" alt="mei-raanana-img">
+        </div>
+        <!-- Contact -->
+        <div class="footer-contact">
+          <ul class="f-d-16 f-m-30 medium">
+            <li>רחוב אחוזה 56, רעננה</li>
+            <li>1-801-227-227</li>
+            <li><a href="#" class="text-blue">water@mei-raanana.co.il</a></li>
+          </ul>
+        </div>
+        <!-- Social -->
+        <div class="footer-social">
+          <ul>
+            <li><a href="#"><img src="img/icons/fb-blue.svg" alt="mei-raanana-img"></a></li>
+            <li><a href="#"><img src="img/icons/wa-blue.svg" alt="mei-raanana-img"></a></li>
+            <li><a href="#"><img src="img/icons/tw-blue.svg" alt="mei-raanana-img"></a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Menu -->
+      <div class="footer-menu">
+        <!-- Accordion -->
+        <div class="accordion">
+          <!-- Collapsible -->
+          <div class="collapsible">
+            <!-- Toggler -->
+            <div class="collapse-toggler">
+              <p class="f-d-18 f-m-35 bold">עמוד בית</p>
+              <img src="img/icons/chevron-bottom.svg" alt="mei-raanana-img" class="d-mobile">
+            </div>
+            <!-- Collapse -->
+            <div class="collapse">
+              <div>
+                <ul class="f-d-16 f-m-30">
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Collapsible -->
+          <div class="collapsible">
+            <!-- Toggler -->
+            <div class="collapse-toggler">
+              <p class="f-d-18 f-m-35 bold">עמוד בית</p>
+              <img src="img/icons/chevron-bottom.svg" alt="mei-raanana-img" class="d-mobile">
+            </div>
+            <!-- Collapse -->
+            <div class="collapse">
+              <div>
+                <ul class="f-d-16 f-m-30">
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Collapsible -->
+          <div class="collapsible">
+            <!-- Toggler -->
+            <div class="collapse-toggler">
+              <p class="f-d-18 f-m-35 bold">עמוד בית</p>
+              <img src="img/icons/chevron-bottom.svg" alt="mei-raanana-img" class="d-mobile">
+            </div>
+            <!-- Collapse -->
+            <div class="collapse">
+              <div>
+                <ul class="f-d-16 f-m-30">
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Collapsible -->
+          <div class="collapsible">
+            <!-- Toggler -->
+            <div class="collapse-toggler">
+              <p class="f-d-18 f-m-35 bold">עמוד בית</p>
+              <img src="img/icons/chevron-bottom.svg" alt="mei-raanana-img" class="d-mobile">
+            </div>
+            <!-- Collapse -->
+            <div class="collapse">
+              <div>
+                <ul class="f-d-16 f-m-30">
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Collapsible -->
+          <div class="collapsible">
+            <!-- Toggler -->
+            <div class="collapse-toggler">
+              <p class="f-d-18 f-m-35 bold">עמוד בית</p>
+              <img src="img/icons/chevron-bottom.svg" alt="mei-raanana-img" class="d-mobile">
+            </div>
+            <!-- Collapse -->
+            <div class="collapse">
+              <div>
+                <ul class="f-d-16 f-m-30">
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Collapsible -->
+          <div class="collapsible">
+            <!-- Toggler -->
+            <div class="collapse-toggler">
+              <p class="f-d-18 f-m-35 bold">עמוד בית</p>
+              <img src="img/icons/chevron-bottom.svg" alt="mei-raanana-img" class="d-mobile">
+            </div>
+            <!-- Collapse -->
+            <div class="collapse">
+              <div>
+                <ul class="f-d-16 f-m-30">
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      לורם איפסום
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Copy -->
+      <div class="footer-copy">
+        <p class="f-d-14 f-m-26">Copyright Mei Raanana , 2022</p>
+        <p class="f-d-14 f-m-26">© 2022 Design by Elevate</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script (Vendor) -->
+  <script src="js/swiper-bundle.min.js"></script>
+  <script src="js/gsap.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+
+  <!-- Script -->
+  <script src="js/elevate-framework.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+
+</html>
