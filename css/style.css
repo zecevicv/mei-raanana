@@ -1729,6 +1729,10 @@ body {
   align-items: flex-start;
 }
 
+.general-page-content .main>div:last-child {
+  margin-bottom: 0;
+}
+
 /* Breadcrumbs */
 .general-page-content .breadcrumbs {
   margin-bottom: 1.5vw;
@@ -2305,10 +2309,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-  }
-
-  .general-page-content .main>div:last-child {
-    margin-bottom: 0;
   }
 
   /* Breadcrumbs */
