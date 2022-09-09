@@ -12,8 +12,8 @@ if (document.querySelector('.banner .accordion')) {
 
 /* #Post Slider
   ======================================================= */
-if (document.querySelector('.news .post-slider .swiper')) {
-  const sliders = document.querySelectorAll('.news .post-slider');
+if (document.querySelector('.post-slider .swiper')) {
+  const sliders = document.querySelectorAll('.post-slider');
 
   sliders.forEach((postSlider) => {
     const slider = postSlider.querySelector('.swiper');

@@ -1847,6 +1847,15 @@ body {
   margin-bottom: 1vw;
 }
 
+/* Text Heading */
+.general-page-content .text-heading {
+  text-align: center;
+}
+
+.general-page-content .text-heading h1 {
+  margin-bottom: 1.3vw;
+}
+
 /* Download */
 .general-page-content .download {
   margin: 2.34vw 0 3.125vw 0;
@@ -1880,11 +1889,11 @@ body {
 }
 
 /* Img */
-.general-page-content .img {
+.general-page-content .main .img {
   margin: 3.125vw 0;
 }
 
-.general-page-content .img img {
+.general-page-content .main .img img {
   border-radius: .78vw;
 }
 
@@ -2429,6 +2438,15 @@ body {
     margin-bottom: 3vw;
   }
 
+  /* Text Heading */
+  .general-page-content .text-heading {
+    padding: 0 2vw;
+  }
+
+  .general-page-content .text-heading h1 {
+    margin-bottom: 3.33vw;
+  }
+
   /* Download */
   .general-page-content .download {
     margin: 20vw 0;
@@ -2463,11 +2481,11 @@ body {
   }
 
   /* Img */
-  .general-page-content .img {
+  .general-page-content .main .img {
     margin: 20vw 0;
   }
 
-  .general-page-content .img img {
+  .general-page-content .main .img img {
     border-radius: 2vw;
   }
 
@@ -2911,5 +2929,64 @@ body {
   .news .tab-btn.active {
     border-color: #67D0FF;
     color: #67D0FF;
+  }
+}
+
+/* #Aricle Page
+================================================== */
+.article-page {
+  padding-top: 6.25vw;
+}
+
+@media (min-width: 1024px) {
+  .article-page .general-page-content .banners {
+    flex: 0 0 16.66vw;
+    margin-left: 6vw;
+  }
+
+  .article-page .general-page-content .main {
+    margin-left: 6vw;
+  }
+  
+  .article-page .general-page-content .row {
+    justify-content: flex-start;
+  }
+
+  .article-page .general-page-content .social {
+    flex: 0;
+  }
+
+  .article-page .general-page-content .social {
+    top: 24%;
+  }
+
+  .article-page .general-page-content .breadcrumbs {
+    margin-bottom: 3.125vw;
+  }
+
+  .article-page .social.d-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .article-page {
+    padding-top: 34.66vw;
+  }
+  
+  .article-page .social.d-mobile {
+    display: flex;
+  }
+  
+  .article-page .social.d-desktop {
+    display: none;
+  }
+
+  .article-page .general-page-content .main .img {
+    margin: 10vw 0;
+  }
+
+  .article-page .general-page-content .social {
+    padding-bottom: 0;
   }
 }
