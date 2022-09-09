@@ -2820,6 +2820,12 @@ body {
   color: #67D0FF;
 }
 
+@media (min-width: 1024px) {
+  .news .section-top {
+    transform: translateY(-4.7vw);
+  }
+}
+
 @media (max-width: 1023.98px) {
   .news {
     position: relative;
