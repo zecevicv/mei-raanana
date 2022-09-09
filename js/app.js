@@ -12,26 +12,53 @@ if (document.querySelector('.banner .accordion')) {
 
 /* #Post Slider
   ======================================================= */
-if (document.querySelector('.post-slider .swiper')) {
-  new Swiper(".post-slider .swiper", {
-    centeredSlides: true,
-    loop: true,
-    breakpoints: {
-      0: {
-        slidesPerView: 1.3
-      },
-      1024: {
-        slidesPerView: 3.77
-      }
-    },
-    pagination: {
-      el: ".post-slider .swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".post-slider .next",
-      prevEl: ".post-slider .prev",
-    },
+if (document.querySelector('.news .post-slider .swiper')) {
+  const sliders = document.querySelectorAll('.news .post-slider');
+
+  sliders.forEach((postSlider) => {
+    const slider = postSlider.querySelector('.swiper');
+    const pagination = postSlider.querySelector('.swiper-pagination');
+    const next = postSlider.querySelector('.next');
+    const prev = postSlider.querySelector('.prev');
+
+    if (postSlider.closest('.news')) {
+      new Swiper(slider, {
+        breakpoints: {
+          0: {
+            slidesPerView: 1.3
+          },
+          1024: {
+            slidesPerView: 4.22
+          }
+        },
+        navigation: {
+          nextEl: next,
+          prevEl: prev,
+        },
+      });
+    } else {
+      new Swiper(slider, {
+        centeredSlides: true,
+        loop: true,
+        breakpoints: {
+          0: {
+            slidesPerView: 1.3
+          },
+          1024: {
+            slidesPerView: 3.77
+          }
+        },
+        pagination: {
+          el: pagination,
+          clickable: true,
+        },
+        navigation: {
+          nextEl: next,
+          prevEl: prev,
+        },
+      });
+    }
+
   });
 }
 
