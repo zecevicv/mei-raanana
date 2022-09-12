@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="115.589" height="115.589" viewBox="0 0 115.589 115.589">
+  <g id="Group_9097" data-name="Group 9097" transform="translate(-222.324 -1159.397)">
+    <ellipse id="Ellipse_1821" data-name="Ellipse 1821" cx="57.795" cy="57.795" rx="57.795" ry="57.795" transform="translate(222.324 1274.986) rotate(-90)" fill="#fff"/>
+    <path id="Path_23851" data-name="Path 23851" d="M12.449,40.513A12.463,12.463,0,0,1,0,28.064C0,22.671,3.667,16.037,7.213,9.621A84.248,84.248,0,0,0,11.871.395.621.621,0,0,1,12.448,0h0a.621.621,0,0,1,.578.394,83.669,83.669,0,0,0,4.553,9C21.01,15.6,24.9,22.637,24.9,28.064A12.463,12.463,0,0,1,12.449,40.513" transform="translate(265.18 1197.271)" fill="#eaf4fe" stroke="#225368" stroke-width="1"/>
+    <path id="Path_23875" data-name="Path 23875" d="M141.682,88.239a12.714,12.714,0,1,1-12.714-12.714,12.714,12.714,0,0,1,12.714,12.714" transform="translate(163.375 1134.254)" fill="#c4ff8a"/>
+    <text id="_" data-name="!" transform="translate(292.343 1228.779)" fill="#225368" font-size="18" font-family="OpenSans-Regular, Open Sans"><tspan x="-2.404" y="0">!</tspan></text>
+  </g>
+</svg>
