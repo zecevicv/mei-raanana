@@ -4165,3 +4165,79 @@ body {
     margin-right: 2vw;
   }
 }
+
+/* #Terms
+================================================== */
+.terms {
+  position: relative;
+  padding: 9.375vw 0 2.34vw 0;
+}
+
+.terms .breadcrumbs {
+  padding-right: 6.14vw;
+  margin-bottom: 3.125vw;
+}
+
+.terms .container {
+  width: 40%;
+  position: relative;
+  z-index: 2;
+}
+
+.terms .container h1 {
+  font-size: 2.08vw;
+  text-align: center;
+  margin-bottom: 2.34vw;
+}
+
+.terms .container h2 {
+  font-size: .94vw;
+  margin-bottom: .6vw;
+  margin-top: 1.3vw;
+}
+
+.terms .container p,
+.terms .container ul {
+  font-size: .94vw;
+  margin-bottom: 1vw;
+}
+
+.terms .container ul li:not(:last-child) {
+  margin-bottom: 1vw;
+}
+
+.terms .container ul {
+  list-style: initial;
+  padding-right: 19px;
+}
+
+@media (max-width: 1023.98px) {
+  .terms {
+    padding: 34.53vw 0 21.73vw 0;
+  }
+  
+  .terms .container {
+    width: 90%;
+  }
+  
+  .terms .container h1 {
+    font-size: 8vw;
+    margin-bottom: 9.33vw;
+  }
+  
+  .terms .container h2 {
+    font-size: 4.26vw;
+    margin-bottom: 2vw;
+    margin-top: 9.33vw;
+  }
+  
+  .terms .container p,
+  .terms .container ul {
+    font-size: 4.26vw;
+    margin-bottom: 2.66vw;
+  }
+  
+  .terms .container ul li:not(:last-child) {
+    margin-bottom: 2.66vw;
+  }
+}
