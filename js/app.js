@@ -1,3 +1,15 @@
+/* #Hamburger
+  ======================================================= */
+const header = document.querySelector('.header');
+const headerBtn = document.querySelector('.header-hamburger');
+
+headerBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  header.classList.toggle('show');
+  body.classList.toggle('no-scroll');
+});
+
 /* #Banner Accordion
   ======================================================= */
 if (document.querySelector('.banner .accordion')) {
