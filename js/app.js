@@ -2,12 +2,47 @@
   ======================================================= */
 const header = document.querySelector('.header');
 const headerBtn = document.querySelector('.header-hamburger');
+const headerMenu = document.querySelector('.header-menu');
 
 headerBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
-  header.classList.toggle('show');
-  body.classList.toggle('no-scroll');
+  if (header.classList.contains('show-search') || header.classList.contains('show')) {
+    header.classList.remove('show');
+    header.classList.remove('show-search');
+  } else {
+    header.classList.add('show');
+  }
+});
+
+// Disable search menu if opened and clicked on desktop 
+headerMenu.addEventListener('click', () => {
+  if (header.classList.contains('show-search') && window.innerWidth > 1023) {
+    header.classList.remove('show-search');
+  }
+});
+
+/* #Search
+  ======================================================= */
+const searchIcon = document.querySelectorAll('.header .search-icon');
+const searchClose = document.querySelector('.header-search-close');
+
+searchIcon.forEach((icon) => {
+  icon.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    if (header.classList.contains('show') && window.innerWidth > 1023) {
+      header.classList.remove('show');
+    }
+  
+    header.classList.toggle('show-search');
+  });
+});
+
+searchClose.addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  header.classList.remove('show-search');
 });
 
 /* #Banner Accordion
