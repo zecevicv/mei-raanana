@@ -4831,3 +4831,125 @@ body {
     margin-right: 2vw;
   }
 }
+
+/* #News Grid
+================================================== */
+.news-grid {
+  position: relative;
+  padding-bottom: 6vw;
+}
+
+.news-grid .breadcrumbs {
+  position: relative;
+  z-index: 1;
+  padding: 2.6vw 6.14vw 3.125vw 0;
+}
+
+.news-grid .container {
+  position: relative;
+  z-index: 1;
+  width: 78.6%;
+}
+
+.news-grid .post-grid-cards {
+  justify-content: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .news-grid .post-grid-cards li:first-child {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1023.98px) {
+  .news-grid {
+    padding: 13.33vw 0 33.33vw 0;
+  }
+
+  .news-grid .container {
+    width: 90%;
+  }
+
+  .news-grid .post-card .img img {
+    height: 95vw;
+  }
+}
+
+/* #News Banner
+================================================== */
+.news-banner > div {
+  box-shadow: 0 3px 20px #54ccff4f;
+  border-radius: 1.3vw;
+}
+
+.news-banner.news-banner-lg {
+  flex: 0 0 66.66666666%;
+}
+
+.news-banner .img img {
+  width: 100%;
+  object-fit: cover;
+  object-position: top left;
+  height: 26.4vw;
+  padding: .6vw;
+  border-radius: 1.3vw;
+}
+
+.news-banner > div {
+  position: relative;
+}
+
+.news-banner .text {
+  position: absolute;
+  top: 3.75vw;
+  width: 20.2vw;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.news-banner .text p {
+  margin: .5vw 0 1.5vw 0;
+}
+
+.news-banner .text a img {
+  width: 2.34vw;
+  margin: 0 auto;
+  margin-bottom: .4vw;
+}
+
+@media (max-width: 1023.98px) {
+  .news-banner > div {
+    border-radius: 3.33vw;
+  }
+  
+  .news-banner .img img {
+    height: 95vw;
+    padding: 2.5vw;
+    object-position: bottom center;
+    border-radius: 3.33vw;
+  }
+  
+  .news-banner > div {
+    position: relative;
+  }
+  
+  .news-banner .text {
+    top: 8.66vw;
+    transform: translate(-50%, 0);
+    width: 78.66vw;
+  }
+
+  .news-banner .text h2 {
+    margin-bottom: 1.4vw;
+  }
+
+  .news-banner .text p {
+    margin-bottom: 5vw;
+  }
+
+  .news-banner .text a img {
+    width: 10vw;
+    margin-bottom: 1.33vw;
+  }
+}
